@@ -17,7 +17,9 @@
 
         {{ if isset $author "thumbnail" }}
             <img class="author-thumb" src="{{ .Site.BaseURL }}{{ $author.thumbnail }}" alt="Author image" nopin="nopin" />
-        {{else if .Site.Params.logo }}
+        {{else if .Site.Params.authorthumbnail }}
+            <img class="author-thumb" src="{{ .Site.BaseURL }}{{.Site.Params.authorthumbnail}}" alt="Author image" nopin="nopin" />
+        {{else if .Site.Params.author }}
             <img class="author-thumb" src="{{ .Site.BaseURL }}{{.Site.Params.logo}}" alt="Author image" nopin="nopin" />
         {{end}}
         {{ if isset $author "name" }}
