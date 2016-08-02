@@ -524,6 +524,14 @@ body.nav-opened .site-wrapper {
     text-decoration: none;
 }
 
+.main-header a {
+  color: #e4e4e4;
+}
+
+.main-header a:hover {
+  color: #ffffff;
+}
+
 .main-nav {
     position: relative;
     padding: 35px 40px;
@@ -1097,7 +1105,7 @@ body:not(.post-template) .post-title {
    text column to break out. */
 .post-content img {
     display: block;
-    max-width: 126%;
+    max-width: 93%;
     height: auto;
     padding: 0.6em 0;
     /* Centers an image by (1) pushing its left edge to the
@@ -1203,7 +1211,7 @@ body:not(.post-template) .post-title {
 }
 
 .tag-head.main-header {
-    height: 40vh;
+    height: 54vh;
     min-height: 180px;
 }
 
