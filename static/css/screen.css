@@ -794,9 +794,17 @@ body.nav-opened .nav {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     display: block;
-    height: 38px;
+    height: 39px;
     padding: 1px 0 5px 0;
     width: auto;
+
+    background: rgba(255, 255, 255, 0.88);
+    padding: 3px;
+    border-radius: 11px;
+}
+
+.blog-logo img:hover {
+  background: rgba(255,255,255,0.94);
 }
 
 .menu-button {
@@ -1201,6 +1209,9 @@ body:not(.post-template) .post-title {
 .post-head.main-header {
     height: 65vh;
     min-height: 180px;
+
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .no-cover.post-head.main-header {
