@@ -38,6 +38,26 @@
         <small>{{.Description}}</small>
 
         <section class="post-meta">
+        {{$author:= .Site.Params.author}}
+        {{if .Params.author }}
+            {{$author:= .Params.author}}
+            {{if isset .Site.Data.authors $author}}
+                {{$author := index .Site.Data.authors .Params.author }}
+            {{end}}
+        {{end}}
+
+        {{ if isset $author "thumbnail" }}
+            <img class="author-thumb" src="{{ .Site.BaseURL }}{{ $author.thumbnail }}" alt="Author image" nopin="nopin" />
+        {{else if .Site.Params.authorthumbnail }}
+            <img class="author-thumb" src="{{ .Site.BaseURL }}{{.Site.Params.authorthumbnail}}" alt="Author image" nopin="nopin" />
+        {{else if .Site.Params.author }}
+            <img class="author-thumb" src="{{ .Site.BaseURL }}{{.Site.Params.logo}}" alt="Author image" nopin="nopin" />
+        {{end}}
+        {{ if isset $author "name" }}
+            {{$author.name}}
+        {{else if .Site.Params.author}}
+            {{.Site.Params.author}}
+        {{end}}
         {{ if eq .Section "post"}}
           <time class="post-date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
             {{ .Date.Format "Jan 2, 2006" }}
